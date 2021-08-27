@@ -227,9 +227,16 @@
                     </div>
     
                     <div class='item'>
+                        <div class='cep item'>
+                            <label>CEP<span>*</span></label>
+                            <input type='text' value="" id='cep' required>
+                        </div>
+                        <div id="errorCep" class="alert alert-danger" style="display: none;" role="alert">
+                            <strong>Ops!</strong> O CEP informado não é válido
+                        </div>
                         <div class='endereco item'>
                             <label>Endereço<span>*</span></label>
-                            <input type='text' value="" required>
+                            <input type='text' value="" id='endereco' required>
                         </div>
                         <div class='numero item'>
                             <label>Número<span>*</span></label>
@@ -244,16 +251,13 @@
                     <div class='item'>
                         <div class='bairro item'>
                             <label>Bairro<span>*</span></label>
-                            <input type='text' value="" required>
+                            <input type='text' value="" id='bairro' required>
                         </div>
                         <div class='cidade item'>
                             <label>Cidade<span>*</span></label>
-                            <input type='text' value="" required>
+                            <input type='text' value="" id='cidade' required>
                         </div>
-                        <div class='cep item'>
-                            <label>CEP<span>*</span></label>
-                            <input type='text' value="" required>
-                        </div>
+                        
                     </div>
     
                     <div class='item'>
@@ -322,5 +326,6 @@
 </body>
 
 <script src='./script.js'></script>
+<script src='./cep.js'></script>
 
 </html>
