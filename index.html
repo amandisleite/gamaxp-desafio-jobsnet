@@ -26,11 +26,11 @@
                     <div class='item'>
                         <div class='nome item'>
                             <label id='nome'>Nome completo<span>*</span></label>
-                            <input type='text' value="" required>
+                            <input type='text' id='inputNome' value="" required>
                         </div>
                         <div class='cpf item'>
                             <label id='cpf'>CPF<span>*</span></label>
-                            <input type='text' value="" id='cpf_digitado' required>
+                            <input type='text' value="" id='inputCpf' required>
                             <div id="success" class="alert alert-success" style="display: none;" role="alert">
                                 <strong>Oba!</strong> Seu CPF é válido
                             </div>
@@ -44,7 +44,7 @@
                         <div class='data item'>
                             <label>Data de Nascimento</label>
                                 <div class='col-1'>
-                                    <select value='' id='data' required>
+                                    <select value='' id='dataDia' required>
                                         <option selected disabled value="">Dia</option>
                                         <option>01</option>
                                         <option>02</option>
@@ -80,7 +80,7 @@
                                     </select>
                                 </div>
                                 <div class='col-2'>
-                                    <select value='' id='data' required>
+                                    <select value='' id='dataMes' required>
                                         <option selected disabled value="">Mês</option>
                                         <option>Janeiro</option>
                                         <option>Fevereiro</option>
@@ -97,7 +97,7 @@
                                     </select>
                                 </div>
                                 <div class='col-3'>
-                                    <select value='' id='data' required>
+                                    <select value='' id='dataAno' required>
                                         <option selected disabled value="">Ano</option>
                                         <option>2021</option>
                                         <option>2020</option>
@@ -205,7 +205,7 @@
                         </div>
                         <div class='estadoCivil item'>
                             <label>Estado Civil</label>
-                            <select value='' id='estadoCivil'>
+                            <select value='' id='inputEstadoCivil'>
                                 <option selected disabled value=""> </option>
                                 <option value="">Solteiro</option>
                                 <option value="">Casado</option>
@@ -217,7 +217,7 @@
                         </div>
                         <div class='sexo item'>
                             <label>Sexo</label>
-                            <select value='' id='sexo'>
+                            <select value='' id='inputSexo'>
                                 <option selected disabled value=""> </option>
                                 <option value="">Feminino</option>
                                 <option value="">Masculino</option>
@@ -229,33 +229,33 @@
                     <div class='item'>
                         <div class='cep item'>
                             <label>CEP<span>*</span></label>
-                            <input type='text' value="" id='cep' required>
+                            <input type='text' value="" id='inputCep' required>
                         </div>
                         <div id="errorCep" class="alert alert-danger" style="display: none;" role="alert">
                             <strong>Ops!</strong> O CEP informado não é válido
                         </div>
                         <div class='endereco item'>
                             <label>Endereço<span>*</span></label>
-                            <input type='text' value="" id='endereco' required>
+                            <input type='text' value="" id='inputEndereco' required>
                         </div>
                         <div class='numero item'>
                             <label>Número<span>*</span></label>
-                            <input type='text' value="" required>
+                            <input type='text' id='inputNumero' value="" required>
                         </div>
                         <div class='complemento item'>
                             <label>Complemento</label>
-                            <input type='text' value="">
+                            <input type='text' id='inputComplemento' value="">
                         </div>
                     </div>
     
                     <div class='item'>
                         <div class='bairro item'>
                             <label>Bairro<span>*</span></label>
-                            <input type='text' value="" id='bairro' required>
+                            <input type='text' value="" id='inputBairro' required>
                         </div>
                         <div class='cidade item'>
                             <label>Cidade<span>*</span></label>
-                            <input type='text' value="" id='cidade' required>
+                            <input type='text' value="" id='inputCidade' required>
                         </div>
                         
                     </div>
@@ -263,29 +263,29 @@
                     <div class='item'>
                         <div class='telefone item'>
                             <label>Telefone de contato<span>*</span></label>
-                            <input type='text' value="" required>
+                            <input type='text' id='inputTelefone' value="" required>
                         </div>
                         <div class='email item'>
                             <label>E-mail<span>*</span></label>
-                            <input type='email' value="" required>
+                            <input type='email' id='inputEmail' value="" required>
                         </div>
                     </div>
     
                     <div class='item'>
                         <div class='profissao item'>
                             <label>Profissão<span>*</span></label>
-                            <input type='text' value="" required>
+                            <input type='text' id='inputProfissao' value="" required>
                         </div>
                         <div class='cargo item'>
                             <label>Cargo Pretendido<span>*</span></label>
-                            <input type='text' value="">
+                            <input type='text' id='inputCargo' value="">
                         </div>
                     </div>
 
                     <div class='item'>
                         <div class='veiculo item'>
                             <label>Possui veículo?</label>
-                            <select>
+                            <select id='inputVeiculo'>
                                 <option selected disabled value=""> </option>
                                 <option value="">Sim</option>
                                 <option value="">Não</option>
@@ -293,7 +293,7 @@
                         </div>
                         <div class='cnh item'>
                             <label>Habilitação</label>
-                            <select>
+                            <select id='inputCNH'>
                                 <option selected disabled value=""> </option>
                                 <option value="">CNH A</option>
                                 <option value="">CNH B</option>
@@ -305,7 +305,7 @@
                         </div>
                     </div>
                     <div>
-                        <button type="submit" onclick="validacao()">CADASTRAR!</button>
+                        <button type="submit" id='submit' onclick="Candidate()">CADASTRAR!</button>
                     </div>
                 </div>
                
@@ -325,7 +325,8 @@
     
 </body>
 
-<script src='./script.js'></script>
+<script src='./cpf.js'></script>
 <script src='./cep.js'></script>
+<script src='./envioForm.js'></script>
 
 </html>

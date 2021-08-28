@@ -73,6 +73,7 @@ input, select {
     background-color: white;
     color: darkslategray;
     font-weight: 500;
+    text-align: center;
 }
 
 input:hover {
@@ -113,7 +114,7 @@ button:hover{
     background-color: #39b54a;
 }
 
-#data {
+#dataDia, #dataMes, #dataAno {
     width: 12rem;
     margin: 0.5rem auto;
 }
@@ -125,7 +126,7 @@ button:hover{
     font-size: 0.8rem;
 }
 
-#error {
+#error, #errorCep {
     color:#b5394a;
     font-weight: 900;
     text-transform: uppercase;

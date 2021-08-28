@@ -1,15 +1,15 @@
 'use strict';
 
 const cleanForm = (endereco) => {
-    document.getElementById('endereco').value = '';
-    document.getElementById('bairro').value = '';
-    document.getElementById('cidade').value = '';
+    document.getElementById('inputEndereco').value = '';
+    document.getElementById('inputBairro').value = '';
+    document.getElementById('inputCidade').value = '';
 }
 
 const fillForm = (endereco) => {
-    document.getElementById('endereco').value = endereco.logradouro;
-    document.getElementById('bairro').value = endereco.bairro;
-    document.getElementById('cidade').value = endereco.localidade;
+    document.getElementById('inputEndereco').value = endereco.logradouro;
+    document.getElementById('inputBairro').value = endereco.bairro;
+    document.getElementById('inputCidade').value = endereco.localidade;
 }
 
 const eNumero = (numero) => /^[0-9]+$/.test(numero);
@@ -21,7 +21,7 @@ const pesquisarCep = async() => {
     cleanForm();
     document.getElementById('errorCep').style.display = 'none';
 
-    const cep = document.getElementById('cep').value;
+    const cep = document.getElementById('inputCep').value;
     const url = `http://viacep.com.br/ws/${cep}/json/`;
 
     if (cepValido(cep)) {
@@ -39,4 +39,4 @@ const pesquisarCep = async() => {
     };  
 }
 
-document.getElementById('cep').addEventListener('focusout', pesquisarCep);
+document.getElementById('inputCep').addEventListener('focusout', pesquisarCep);

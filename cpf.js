@@ -48,7 +48,7 @@ function validacao() {
     document.getElementById('success').style.display = 'none';
     
 
-    let cpf = document.getElementById('cpf_digitado').value;
+    let cpf = document.getElementById('inputCpf').value;
 
     var resultadoValidacao = validaCPF(cpf);
     console.log(cpf);
@@ -59,3 +59,5 @@ function validacao() {
         document.getElementById('error').style.display = 'block';
     }
 }
+
+document.getElementById('inputCpf').addEventListener('focusout', validacao);
