@@ -22,7 +22,7 @@ const pesquisarCep = async() => {
     document.getElementById('errorCep').style.display = 'none';
 
     const cep = document.getElementById('inputCep').value;
-    const url = `http://viacep.com.br/ws/${cep}/json/`;
+    const url = `https://viacep.com.br/ws/${cep}/json/`;
 
     if (cepValido(cep)) {
         const dados = await fetch(url)
