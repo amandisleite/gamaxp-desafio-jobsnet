@@ -41,6 +41,7 @@ const createCandidate = async (candidato) => {
           if (user.status == 200) {
               console.log(Form())
               alert('deu certo');
+              window.open('./sucesso.html')
           } if (user.status == 500) {
               alert ('já temos seus dados'); 
           }
@@ -73,8 +74,6 @@ function checkForm() {
     || telefone == '' || email == false || profissao == '' || cargo == '') {
         alert('preencha os campos novamente');
     } else {
-        document.getElementById('enviar').addEventListener('focusout', createCandidate);
-
         createCandidate();
         alert('verificando cadastro...');
     }
