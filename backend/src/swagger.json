@@ -11,6 +11,10 @@
     {
       "url": "http://localhost:5000",
       "description": "ambiente de desenvolvimento"
+    },
+    {
+      "url": "https://jobsnet-server.herokuapp.com/",
+      "description": "ambiente de produção"
     }
   ],
 
