@@ -126,7 +126,7 @@ button:hover{
     font-size: 0.8rem;
 }
 
-#error, #errorCep {
+#error, #errorCep, #errorSubmit {
     color:#b5394a;
     font-weight: 900;
     text-transform: uppercase;

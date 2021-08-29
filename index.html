@@ -20,17 +20,20 @@
         <p>Cadastre-se em nosso banco e tenha acesso às oportunidades de trabalho</p>
         
         <div class=''>
-
-            <form name='form' onchange="Form()">
+            
+            <form name='form' id='form'>
                 <div class='container'>
                     <div class='item'>
+                        <div id="errorSubmit" class="alert alert-danger" style="display: none;" role="alert">
+                            <strong>Ops!</strong> Ocorreu algum erro. Tente novamente.
+                        </div>
                         <div class='nome item'>
                             <label id='nome'>Nome completo<span>*</span></label>
-                            <input type='text' id='inputNome' name='inputNome' value="" required>
+                            <input type='text' id='inputNome' name='inputNome' onchange='Form()' value="" required>
                         </div>
                         <div class='cpf item'>
                             <label id='cpf'>CPF<span>*</span></label>
-                            <input type='text' value="" id='inputCpf' name='inputCpf' required>
+                            <input type='text' value="" id='inputCpf' name='inputCpf' onchange='Form()' onkeypress="$(this).mask('000.000.000-00');" required>
                             <div id="success" class="alert alert-success" style="display: none;" role="alert">
                                 <strong>Oba!</strong> Seu CPF é válido
                             </div>
@@ -44,7 +47,7 @@
                         <div class='data item'>
                             <label>Data de Nascimento</label>
                                 <div class='col-1'>
-                                    <select value='' id='dataDia' name='dataDia' required>
+                                    <select value='' id='dataDia' name='dataDia' onchange='Form()' required>
                                         <option selected disabled value="">Dia</option>
                                         <option value = "1" >1</option>
                                         <option value = "2" >2</option>
@@ -80,7 +83,7 @@
                                     </select>
                                 </div>
                                 <div class='col-2'>
-                                    <select value='' id='dataMes' name='dataMes' required>
+                                    <select value='' id='dataMes' name='dataMes' onchange='Form()' required>
                                         <option selected disabled value="">Mês</option>
                                         <option value = "Janeiro" >Janeiro</option>
                                         <option value = "Fevereiro" >Fevereiro</option>
@@ -97,7 +100,7 @@
                                     </select>
                                 </div>
                                 <div class='col-3'>
-                                    <select value='' id='dataAno' name='dataAno' required>
+                                    <select value='' id='dataAno' name='dataAno' onchange='Form()' required>
                                         <option selected disabled value="">Ano</option>
                                         <option value = "2021">2021</option>
                                         <option value = "2020">2020</option>
@@ -205,7 +208,7 @@
                         </div>
                         <div class='estadoCivil item'>
                             <label>Estado Civil</label>
-                            <select value='' id='inputEstadoCivil' name='inputEstadoCivil'>
+                            <select value='' id='inputEstadoCivil' onchange='Form()' name='inputEstadoCivil'>
                                 <option selected disabled value=""> </option>
                                 <option value="Solteiro">Solteiro</option>
                                 <option value="Casado">Casado</option>
@@ -217,7 +220,7 @@
                         </div>
                         <div class='sexo item'>
                             <label>Sexo</label>
-                            <select value='' id='inputSexo' name='inputSexo'>
+                            <select value='' id='inputSexo' onchange='Form()' name='inputSexo'>
                                 <option selected disabled value=""> </option>
                                 <option value="Feminino">Feminino</option>
                                 <option value="Masculino">Masculino</option>
@@ -230,33 +233,33 @@
                     <div class='item'>
                         <div class='cep item'>
                             <label>CEP<span>*</span></label>
-                            <input type='text' value="" id='inputCep' name='inputCep' required>
+                            <input type='text' value="" id='inputCep' name='inputCep' onchange='Form()' onkeypress="$(this).mask('00000-000')" required>
                         </div>
                         <div id="errorCep" class="alert alert-danger" style="display: none;" role="alert">
                             <strong>Ops!</strong> O CEP informado não é válido
                         </div>
                         <div class='endereco item'>
                             <label>Endereço<span>*</span></label>
-                            <input type='text' value="" id='inputEndereco' name='inputEndereco' required>
+                            <input type='text' value="" id='inputEndereco' name='inputEndereco' onchange='Form()' required>
                         </div>
                         <div class='numero item'>
                             <label>Número<span>*</span></label>
-                            <input type='text' id='inputNumero' name='inputNumero' value="" required>
+                            <input type='text' id='inputNumero' name='inputNumero' value="" onchange='Form()' required>
                         </div>
                         <div class='complemento item'>
                             <label>Complemento</label>
-                            <input type='text' id='inputComplemento' name='inputComplemento' value="">
+                            <input type='text' id='inputComplemento' name='inputComplemento' onchange='Form()' value="">
                         </div>
                     </div>
     
                     <div class='item'>
                         <div class='bairro item'>
                             <label>Bairro<span>*</span></label>
-                            <input type='text' value="" id='inputBairro' name='inputBairro' required>
+                            <input type='text' value="" id='inputBairro' name='inputBairro' onchange='Form()' required>
                         </div>
                         <div class='cidade item'>
                             <label>Cidade<span>*</span></label>
-                            <input type='text' value="" id='inputCidade' name='inputCidade' required>
+                            <input type='text' value="" id='inputCidade' name='inputCidade' onchange='Form()' required>
                         </div>
                         
                     </div>
@@ -264,29 +267,29 @@
                     <div class='item'>
                         <div class='telefone item'>
                             <label>Telefone de contato<span>*</span></label>
-                            <input type='text' id='inputTelefone' name='inputTelefone' value="" required>
+                            <input type='text' id='inputTelefone' name='inputTelefone' value="" onchange='Form()' onkeypress="$(this).mask('(00) 000000009')" required>
                         </div>
                         <div class='email item'>
                             <label>E-mail<span>*</span></label>
-                            <input type='email' id='inputEmail' name='inputEmail' value="" required>
+                            <input type='email' id='inputEmail' name='inputEmail' value="" onchange='Form()' required>
                         </div>
                     </div>
     
                     <div class='item'>
                         <div class='profissao item'>
                             <label>Profissão<span>*</span></label>
-                            <input type='text' id='inputProfissao' name='inputProfissao' value="" required>
+                            <input type='text' id='inputProfissao' name='inputProfissao' value="" onchange='Form()' required>
                         </div>
                         <div class='cargo item'>
                             <label>Cargo Pretendido<span>*</span></label>
-                            <input type='text' id='inputCargo' name='inputCargo' value="">
+                            <input type='text' id='inputCargo' name='inputCargo' onchange='Form()' value="">
                         </div>
                     </div>
 
                     <div class='item'>
                         <div class='veiculo item'>
                             <label>Possui veículo?</label>
-                            <select id='inputVeiculo' name='inputVeiculo'>
+                            <select id='inputVeiculo' name='inputVeiculo' onchange='Form()'>
                                 <option selected disabled value=""> </option>
                                 <option value="Sim">Sim</option>
                                 <option value="Não">Não</option>
@@ -294,7 +297,7 @@
                         </div>
                         <div class='cnh item'>
                             <label>Habilitação</label>
-                            <select id='inputCNH' name='inputCNH'>
+                            <select id='inputCNH' name='inputCNH' onchange='Form()'>
                                 <option selected disabled value=""> </option>
                                 <option value="CNH A">CNH A</option>
                                 <option value="CNH B">CNH B</option>
@@ -306,7 +309,13 @@
                         </div>
                     </div>
                     <div>
-                        <button type="submit" id='submit' onclick="createCandidate()">CADASTRAR!</button>
+                        <button type="submit" id='enviar' onclick="checkForm()">CADASTRAR!</button>
+                        <div id="successSubmit" class="alert alert-success" style="display: none;" role="alert">
+                            <strong>Oba!</strong> Cadastro realizado com sucesso!
+                        </div>
+                        <div id="errorSubmit" class="alert alert-danger" style="display: none;" role="alert">
+                            <strong>Ops!</strong> Ocorreu algum erro. Tente novamente.
+                        </div>
                     </div>
                 </div>
                
@@ -329,5 +338,8 @@
 <!-- <script src='./cpf.js'></script>
 <script src='./cep.js'></script> -->
 <script src='./envioForm.js'></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 
 </html>
