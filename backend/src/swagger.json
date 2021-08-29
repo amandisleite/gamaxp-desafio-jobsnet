@@ -1,0 +1,116 @@
+{
+  "openapi": "3.0.0",
+
+  "info": {
+    "title": "API do JobsNET",
+    "description": "API para conexão com banco de dados do JobsNET",
+    "version": "0.0.1"
+  },
+
+  "servers": [
+    {
+      "url": "http://localhost:5000",
+      "description": "ambiente de desenvolvimento"
+    }
+  ],
+
+  "paths": {
+    "/register": {
+      "post": {
+        "summary": "Cadastro de candidato",
+        "description": "Rota de cadastro de usuário, recebe: nome, genêro, email e cep",
+        "tags": ["candidato"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "nomeCompleto": {
+                    "type": "string"
+                  },
+                  "cpf": {
+                    "type": "string"
+                  },
+                  "dataDia": {
+                    "type": "string"
+                  },
+                  "dataMes": {
+                    "type": "string"
+                  },
+                  "dataAno": {
+                    "type": "string"
+                  },
+                  "estadoCivil": {
+                    "type": "string"
+                  },
+                  "sexo": {
+                    "type": "string"
+                  },
+                  "cep": {
+                    "type": "string"
+                  },
+                  "endereco": {
+                    "type": "string"
+                  },
+                  "numero": {
+                    "type": "string"
+                  },
+                  "complemento": {
+                    "type": "string"
+                  },
+                  "bairro": {
+                    "type": "string"
+                  },
+                  "cidade": {
+                    "type": "string"
+                  },
+                  "telefone": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "profissao": {
+                    "type": "string"
+                  },
+                  "cargo": {
+                    "type": "string"
+                  },
+                  "veiculo": {
+                    "type": "string"
+                  },
+                  "cnh": {
+                    "type": "string"
+                  }
+                }
+              },
+              "examples": {
+                "eu mermo": {
+                  "value": {
+                    "nomeCompleto": "Amanda R Leite",
+                    "cpf": "41226280838",
+                    "dataNascimento": "15/06/1993",
+                    "estadoCivil": "solteira",
+                    "sexo": "feminino",
+                    "cep": "00000-000",
+                    "endereco": "Rua Blablabla",
+                    "numero": "33",
+                    "complemento": "",
+                    "bairro": "centro",
+                    "cidade": "Mogi",
+                    "telefone": "888888888",
+                    "email": "blablabla@gmail.com",
+                    "profissao": "analista",
+                    "cargo": "analista",
+                    "veiculo": "carro",
+                    "cnh": "999999999"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

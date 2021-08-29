@@ -60,4 +60,6 @@ function validacao() {
     }
 }
 
+document.getElementById('error').style.display = 'none';
+document.getElementById('success').style.display = 'none';
 document.getElementById('inputCpf').addEventListener('focusout', validacao);

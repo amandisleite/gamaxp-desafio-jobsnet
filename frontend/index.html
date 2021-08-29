@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JobsNET</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,6 +24,9 @@
             <form name='form' id='form'>
                 <div class='container'>
                     <div class='item'>
+                        <div id="errorDup" class="alert alert-danger" style="display: none;" role="alert">
+                            <strong>Ops!</strong> Ocorreu algum erro. Tente novamente.
+                        </div>
                         <div id="errorSubmit" class="alert alert-danger" style="display: none;" role="alert">
                             <strong>Ops!</strong> Ocorreu algum erro. Tente novamente.
                         </div>
@@ -33,7 +36,7 @@
                         </div>
                         <div class='cpf item'>
                             <label id='cpf'>CPF<span>*</span></label>
-                            <input type='text' value="" id='inputCpf' name='inputCpf' onchange='Form()' onkeypress="$(this).mask('000.000.000-00');" required>
+                            <input type='text' value="" id='inputCpf' name='inputCpf' placeholder='apenas números' onchange='Form()' required>
                             <div id="success" class="alert alert-success" style="display: none;" role="alert">
                                 <strong>Oba!</strong> Seu CPF é válido
                             </div>
@@ -233,7 +236,7 @@
                     <div class='item'>
                         <div class='cep item'>
                             <label>CEP<span>*</span></label>
-                            <input type='text' value="" id='inputCep' name='inputCep' onchange='Form()' onkeypress="$(this).mask('00000-000')" required>
+                            <input type='text' value="" id='inputCep' name='inputCep' onchange='Form()' placeholder='apenas números' onkeypress="$(this).mask('00000-000')" required>
                         </div>
                         <div id="errorCep" class="alert alert-danger" style="display: none;" role="alert">
                             <strong>Ops!</strong> O CEP informado não é válido
@@ -267,7 +270,7 @@
                     <div class='item'>
                         <div class='telefone item'>
                             <label>Telefone de contato<span>*</span></label>
-                            <input type='text' id='inputTelefone' name='inputTelefone' value="" onchange='Form()' onkeypress="$(this).mask('(00) 000000009')" required>
+                            <input type='text' id='inputTelefone' name='inputTelefone' value="" onchange='Form()' required>
                         </div>
                         <div class='email item'>
                             <label>E-mail<span>*</span></label>
@@ -299,6 +302,7 @@
                             <label>Habilitação</label>
                             <select id='inputCNH' name='inputCNH' onchange='Form()'>
                                 <option selected disabled value=""> </option>
+                                <option value="Não possui">Não possui</option>
                                 <option value="CNH A">CNH A</option>
                                 <option value="CNH B">CNH B</option>
                                 <option value="CNH C">CNH C</option>
@@ -314,6 +318,9 @@
                             <strong>Oba!</strong> Cadastro realizado com sucesso!
                         </div>
                         <div id="errorSubmit" class="alert alert-danger" style="display: none;" role="alert">
+                            <strong>Ops!</strong> Ocorreu algum erro. Tente novamente.
+                        </div>
+                        <div id="errorDup" class="alert alert-danger" style="display: none;" role="alert">
                             <strong>Ops!</strong> Ocorreu algum erro. Tente novamente.
                         </div>
                     </div>
@@ -335,11 +342,8 @@
     
 </body>
 
-<!-- <script src='./cpf.js'></script>
-<script src='./cep.js'></script> -->
-<script src='./envioForm.js'></script>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src='js/cpf.js'></script>
+<script src='js/cep.js'></script>
+<script src='js/envioForm.js'></script>
 
 </html>

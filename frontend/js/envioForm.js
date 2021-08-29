@@ -43,7 +43,8 @@ const createCandidate = async (candidato) => {
               alert('deu certo');
               window.open('./sucesso.html')
           } if (user.status == 500) {
-              alert ('já temos seus dados'); 
+              alert ('já temos seus dados');
+              window.open('./dadosDup.html') 
           }
         
 }
@@ -71,8 +72,8 @@ function checkForm() {
 
     if (nomeCompleto == '' || cpf == '' || dataDia == '' || dataMes == '' || dataAno == ''
     || cep == '' || endereco == '' || numero == '' || bairro == '' || cidade == ''
-    || telefone == '' || email == false || profissao == '' || cargo == '') {
-        alert('preencha os campos novamente');
+    || telefone == '' || email == false || profissao == '' || cargo == ''){
+        document.getElementById('errorSubmit').style.display = 'block'; 
     } else {
         createCandidate();
         alert('verificando cadastro...');
