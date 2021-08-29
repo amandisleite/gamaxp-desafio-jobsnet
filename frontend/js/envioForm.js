@@ -30,7 +30,7 @@ const Form = () => {
     
 const createCandidate = async (candidato) => {
       
-    const user = await fetch('http://localhost:5000/register', {
+    const user = await fetch('https://jobsnet-server.herokuapp.com/register', {
         method: "POST",
         headers: {
             'Accept': 'application/json',
