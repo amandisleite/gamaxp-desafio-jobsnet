@@ -8,10 +8,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node src/index.js",
     "dev": "nodemon src/index.js"
   },
   "keywords": [],
-  "author": "Pedro Hiro Sato",
+  "author": "Amanda Leite",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
